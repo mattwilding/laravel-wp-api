@@ -79,7 +79,6 @@ class WpApi
      */
     public function post($slug)
     {
-        //return $this->get('posts', ['filter' => ['name' => $slug]]);
         return $this->get('posts', ['slug' => $slug]);
     }
 
@@ -101,8 +100,7 @@ class WpApi
      */
     public function categories()
     {
-        //return $this->get('taxonomies/category/terms');
-        return $this->get('categories');
+        return $this->get('categories',['per_page' => 99]);
     }
 
     /**
@@ -110,9 +108,12 @@ class WpApi
      *
      * @return array
      */
-    public function tags()
+    public function tags($tag=null)
     {
-        return $this->get('taxonomies/post_tag/terms');
+        if($tag > 0){
+          return $this->get('tags/'.$tag, ['per_page' => 99]);
+        }
+        return $this->get('tags', ['per_page' => 99]);
     }
 
     /**
@@ -122,7 +123,6 @@ class WpApi
      * @param  int $page
      * @return array
      */
-    //public function categoryPosts($slug, $page = null)
     public function categoryPosts($cat = null, $page = null)
     {
         return $this->get('posts', ['categories' => trim($cat),'page' => $page]);
@@ -160,7 +160,7 @@ class WpApi
      */
     public function tagPosts($tags, $page = null)
     {
-        return $this->get('posts', ['page' => $page, 'filter' => ['tag' => $tags]]);
+        return $this->get('posts', ['tags' => $tags]);
     }
 
     /**
@@ -235,3 +235,4 @@ class WpApi
 
     }
 }
+
