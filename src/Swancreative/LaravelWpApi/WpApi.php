@@ -48,7 +48,17 @@ class WpApi
     {
         return $this->get('posts', ['page' => $page]);
     }
-
+    /**
+     * Get all sticky posts
+     *
+     * @param  int $page
+     * @return array
+     */
+    public function stickies($page = null)
+    {
+        return $this->get('posts', ['sticky' => true, 'page' => $page]);
+    }
+    
     /**
      * Get all pages
      *
