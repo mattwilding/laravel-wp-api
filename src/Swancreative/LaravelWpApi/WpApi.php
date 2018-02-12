@@ -67,7 +67,7 @@ class WpApi
      */
     public function pages($page = null)
     {
-        return $this->get('posts', ['type' => 'page', 'page' => $page]);
+        return $this->get('pages', ['page' => $page]);
     }
 
     /**
