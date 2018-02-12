@@ -2,6 +2,6 @@
 
 return array(
 
-    'endpoint' => 'http://<WP_LOCATION>/wp-json/',
+    'endpoint' => env('WP_API_ENDPOINT'),
     
 );
