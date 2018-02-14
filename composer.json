@@ -22,5 +22,15 @@
             "Swancreative\\LaravelWpApi\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+    "laravel": {
+        "providers": [
+            " Swancreative\\LaravelWpApi\\LaravelWpApiServiceProvider"
+        ],
+        "aliases": {
+            "WpApi": "Swancreative\\LaravelWpApi\\Facades"
+        }
+    }
+},
 }
