@@ -29,5 +29,5 @@
                 " Swancreative\\LaravelWpApi\\LaravelWpApiServiceProvider"
             ]
         }
-    },
+    }
 }
