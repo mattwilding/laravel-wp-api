@@ -24,13 +24,10 @@
     },
     "minimum-stability": "stable",
     "extra": {
-    "laravel": {
-        "providers": [
-            " Swancreative\\LaravelWpApi\\LaravelWpApiServiceProvider"
-        ],
-        "aliases": {
-            "WpApi": "Swancreative\\LaravelWpApi\\Facades"
+        "laravel": {
+            "providers": [
+                " Swancreative\\LaravelWpApi\\LaravelWpApiServiceProvider"
+            ]
         }
-    }
-},
+    },
 }
