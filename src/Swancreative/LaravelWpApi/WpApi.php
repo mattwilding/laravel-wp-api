@@ -125,6 +125,18 @@ class WpApi
         }
         return $this->get('tags', ['per_page' => 99]);
     }
+    
+    /**
+     * Get posts from categories within a parent category
+     *
+     * @param  string $parent
+     * @param  int $page
+     * @return array
+     */
+    public function parentPosts($parent = null, $page = null, $pp = null)
+    {
+      return $this->get('posts', ['parent' => trim($parent),'page' => $page, 'per_page' => $pp]);
+    }
 
     /**
      * Get posts from category
